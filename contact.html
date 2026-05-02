@@ -16,11 +16,12 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; border: none; transition: 0.3s;
         }
         .team-card:hover { transform: translateY(-10px); }
-        .member-img { 
-            width: 160px; height: 160px; border-radius: 50%; 
-            object-fit: cover; margin-bottom: 20px; border: 5px solid var(--blue);
-            background-color: #eee;
+        .img-wrapper {
+            width: 160px; height: 160px; margin: 0 auto 20px;
+            border-radius: 50%; border: 5px solid var(--blue);
+            overflow: hidden; background: #eee;
         }
+        .member-img { width: 100%; height: 100%; object-fit: cover; }
         .badge-role { font-size: 0.8rem; padding: 8px 15px; border-radius: 50px; margin-bottom: 15px; display: inline-block; }
     </style>
 </head>
@@ -48,7 +49,9 @@
         <div class="row justify-content-center mb-5">
             <div class="col-md-6">
                 <div class="team-card shadow-lg" style="border-top: 6px solid var(--blue);">
-                    <img src="https://i.ibb.co/LhYp6qY/eyad.jpg" class="member-img" alt="Eyad Amr">
+                    <div class="img-wrapper">
+                        <img src="eyad.jpg" class="member-img" alt="Eyad Amr" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Eyad+Amr&background=007bff&color=fff&size=200'">
+                    </div>
                     <h3 class="fw-bold">Eyad Amr</h3>
                     <div class="badge-role bg-primary text-white">FOUNDER & CEO</div>
                     <p class="fw-bold text-dark mb-1">Chief Technical Architect</p>
@@ -60,7 +63,9 @@
         <div class="row g-4 text-center">
             <div class="col-md-4">
                 <div class="team-card">
-                    <img src="https://i.ibb.co/M9X8L4v/kareem.jpg" class="member-img" alt="Kareem Hassan">
+                    <div class="img-wrapper">
+                        <img src="kareem.jpg" class="member-img" alt="Kareem Hassan" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kareem+Hassan&background=ffc107&color=000&size=200'">
+                    </div>
                     <h4 class="fw-bold">Kareem Hassan</h4>
                     <div class="badge-role bg-warning text-dark">COO</div>
                     <p class="small text-muted">Operations lead and project coordinator.</p>
@@ -68,7 +73,9 @@
             </div>
             <div class="col-md-4">
                 <div class="team-card">
-                    <img src="https://i.ibb.co/p3q8X6r/sohaib.jpg" class="member-img" alt="Sohaib Kassem">
+                    <div class="img-wrapper">
+                        <img src="sohaib.jpg" class="member-img" alt="Sohaib Kassem" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Sohaib+Kassem&background=212529&color=fff&size=200'">
+                    </div>
                     <h4 class="fw-bold">Sohaib Kassem</h4>
                     <div class="badge-role bg-dark text-white">FABRICATION LEAD</div>
                     <p class="small text-muted">Mechanical prototyping and build development.</p>
@@ -76,7 +83,9 @@
             </div>
             <div class="col-md-4">
                 <div class="team-card">
-                    <img src="https://i.ibb.co/L5r9x3W/mohamed.jpg" class="member-img" alt="Mohamed Sherif">
+                    <div class="img-wrapper">
+                        <img src="mohamed.jpg" class="member-img" alt="Mohamed Sherif" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mohamed+Sherif&background=198754&color=fff&size=200'">
+                    </div>
                     <h4 class="fw-bold">Mohamed Sherif</h4>
                     <div class="badge-role bg-success text-white">CRO</div>
                     <p class="small text-muted">Chief Research Officer and documentation lead.</p>
