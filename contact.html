@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaVolt | Contact & Team</title>
+    <title>AquaVolt | Team & Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --navy: #0a192f; --blue: #007bff; }
-        body { font-family: sans-serif; background: #fff; }
-        .navbar { background: var(--navy) !important; }
-        .contact-header { background: var(--navy); color: white; padding: 100px 0; text-align: center; }
-        .contact-form { padding: 40px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-top: -80px; background: white; }
+        body { font-family: sans-serif; background: #fff; overflow-x: hidden; }
+        .navbar { background: rgba(10, 25, 47, 0.95) !important; backdrop-filter: blur(10px); }
+        
+        .contact-header { background: var(--navy); color: white; padding: 120px 0; text-align: center; }
+        
+        /* Interactive Contact Form */
+        .contact-form { 
+            padding: 50px; border-radius: 25px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
+            margin-top: -100px; background: white; transition: 0.4s;
+        }
+        .contact-form:hover { box-shadow: 0 40px 80px rgba(0,123,255,0.15); }
+        
+        /* Tofaa on Inputs */
+        .form-control { padding: 15px; background: #f8f9fa; border: 2px solid #f8f9fa; transition: 0.3s; }
+        .form-control:focus { background: #fff; border-color: var(--blue); box-shadow: none; }
+
+        /* Team Cards Hover Tofaa */
+        .team-img-wrapper { 
+            width: 140px; height: 140px; margin: 0 auto 20px;
+            border-radius: 50%; border: 4px solid #eee; 
+            transition: all 0.4s ease; overflow: hidden;
+        }
+        .team-card:hover .team-img-wrapper { border-color: var(--blue); transform: scale(1.1) rotate(5deg); }
     </style>
 </head>
 <body>
@@ -27,30 +47,32 @@
     </nav>
 
     <div class="contact-header">
-        <h1 class="display-4 fw-bold">Let's Work Together</h1>
-        <p class="lead opacity-75">Contact our sales team for a custom quote</p>
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">Ready to Start?</h1>
+            <p class="lead opacity-75">Tell us about your project requirements</p>
+        </div>
     </div>
 
     <div class="container mb-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="contact-form">
+            <div class="col-lg-9 mx-auto">
+                <div class="contact-form" data-aos="zoom-in" data-aos-delay="200">
                     <form>
-                        <div class="row g-3">
+                        <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label fw-bold">Full Name</label>
-                                <input type="text" class="form-control p-3 bg-light border-0" placeholder="Eyad Amr">
+                                <input type="text" class="form-control" placeholder="Eyad Amr">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label fw-bold">Email Address</label>
-                                <input type="email" class="form-control p-3 bg-light border-0" placeholder="name@company.com">
+                                <label class="form-label fw-bold">Company Email</label>
+                                <input type="email" class="form-control" placeholder="name@company.com">
                             </div>
                             <div class="col-12">
-                                <label class="form-label fw-bold">Project Details</label>
-                                <textarea class="form-control p-3 bg-light border-0" rows="4" placeholder="Tell us about your farm or canal..."></textarea>
+                                <label class="form-label fw-bold">Project Description</label>
+                                <textarea class="form-control" rows="5" placeholder="Enter details..."></textarea>
                             </div>
                             <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill mt-3">Send Inquiry</button>
+                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill mt-3 shadow">Submit Request</button>
                             </div>
                         </div>
                     </form>
@@ -59,31 +81,45 @@
         </div>
     </div>
 
-    <div class="container py-5">
-        <h2 class="text-center fw-bold mb-5">Leadership Team</h2>
+    <div class="container py-5 mt-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Executive Team</h2>
+            <p class="text-muted">The minds behind AquaVolt</p>
+        </div>
         <div class="row g-4 text-center">
-            <div class="col-md-3">
-                <img src="eyad.jpg" class="rounded-circle mb-3 border border-4 border-primary" style="width:120px; height:120px; object-fit:cover;">
-                <h6 class="fw-bold mb-0">Eyad Amr</h6>
-                <p class="text-primary small">CEO & Founder</p>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="eyad.jpg" class="w-100 h-100 object-fit-cover"></div>
+                    <h6 class="fw-bold mb-0">Eyad Amr</h6>
+                    <p class="text-primary small">CEO & Founder</p>
+                </div>
             </div>
-            <div class="col-md-3">
-                <img src="kareem.jpg" class="rounded-circle mb-3" style="width:120px; height:120px; object-fit:cover;">
-                <h6 class="fw-bold mb-0">Kareem Hassan</h6>
-                <p class="text-muted small">COO</p>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="kareem.jpg" class="w-100 h-100 object-fit-cover"></div>
+                    <h6 class="fw-bold mb-0">Kareem Hassan</h6>
+                    <p class="text-muted small">COO</p>
+                </div>
             </div>
-            <div class="col-md-3">
-                <img src="sohaib.jpg" class="rounded-circle mb-3" style="width:120px; height:120px; object-fit:cover;">
-                <h6 class="fw-bold mb-0">Sohaib Kassem</h6>
-                <p class="text-muted small">Fabrication Lead</p>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="sohaib.jpg" class="w-100 h-100 object-fit-cover"></div>
+                    <h6 class="fw-bold mb-0">Sohaib Kassem</h6>
+                    <p class="text-muted small">Fabrication Lead</p>
+                </div>
             </div>
-            <div class="col-md-3">
-                <img src="mohamed.jpg" class="rounded-circle mb-3" style="width:120px; height:120px; object-fit:cover;">
-                <h6 class="fw-bold mb-0">Mohamed Sherif</h6>
-                <p class="text-muted small">CRO</p>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="mohamed.jpg" class="w-100 h-100 object-fit-cover"></div>
+                    <h6 class="fw-bold mb-0">Mohamed Sherif</h6>
+                    <p class="text-muted small">CRO</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
