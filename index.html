@@ -3,158 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaVolt | Smart & Sustainable Hydro</title>
+    <title>AquaVolt | Future of Energy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
-    
     <style>
-        :root { --navy: #0a192f; --blue: #007bff; --accent: #64ffda; }
-        body { font-family: 'Lexend', sans-serif; background: #fff; overflow-x: hidden; }
-        .navbar { background: rgba(10, 25, 47, 0.95) !important; backdrop-filter: blur(10px); padding: 1rem 0; }
-        
-        /* Hero Tofaa */
-        .hero-interactive {
-            padding: 180px 0;
-            background: radial-gradient(circle at center, #112240 0%, var(--navy) 100%);
-            color: white; border-bottom: 5px solid var(--blue); position: relative;
+        :root { --cyber-blue: #00f2ff; --deep-dark: #050a15; --glass: rgba(255, 255, 255, 0.05); }
+        body { background-color: var(--deep-dark); color: white; font-family: 'Lexend', sans-serif; overflow-x: hidden; }
+
+        /* Glowing Navbar */
+        .navbar { background: rgba(5, 10, 21, 0.8) !important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 242, 255, 0.2); }
+        .navbar-brand { text-shadow: 0 0 10px var(--cyber-blue); }
+
+        /* Hero Section with Glow */
+        .hero-cyber {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            background: radial-gradient(circle at top right, rgba(0, 242, 255, 0.1), transparent);
+            position: relative;
         }
-        /* تأثير ذبذبة خلف الهيرو */
-        .hero-interactive::after {
-            content: ''; position: absolute; width: 300px; height: 300px; background: var(--blue); 
-            filter: blur(150px); opacity: 0.2; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        .hero-title { font-size: 5rem; font-weight: 800; background: linear-gradient(to right, #fff, var(--cyber-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Cyber Cards */
+        .cyber-card {
+            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 40px; transition: 0.5s; position: relative;
+        }
+        .cyber-card:hover { 
+            border-color: var(--cyber-blue); transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+        }
+        .cyber-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 242, 255, 0.05)); border-radius: 20px;
         }
 
-        /* Tofaa Hover on Service Cards */
-        .service-card {
-            border: none; padding: 40px; border-radius: 20px; background: #f8f9fa;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); height: 100%; position: relative; overflow: hidden;
+        /* Neon Button */
+        .btn-neon {
+            border: 2px solid var(--cyber-blue); color: var(--cyber-blue); background: transparent;
+            padding: 15px 40px; border-radius: 50px; font-weight: bold; transition: 0.4s;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
         }
-        .service-card::before {
-            content: ''; position: absolute; inset: 0; background: var(--blue); 
-            transform: translateY(100%); transition: transform 0.5s ease; z-index: 1;
-        }
-        .service-card:hover { transform: translateY(-15px) scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .service-card:hover::before { transform: translateY(0); }
-        .service-card * { position: relative; z-index: 2; transition: color 0.4s ease; }
-        .service-card:hover * { color: white !important; }
-
-        /* Stats Counter Tofaa */
-        .stat-number { font-size: 3.5rem; fw-bold: 700; color: var(--accent); }
-
-        footer { background: var(--navy); color: white; padding: 80px 0 20px; }
-        .footer-link { color: #8892b0; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
-        .footer-link:hover { color: var(--blue); transform: translateX(5px); }
+        .btn-neon:hover { background: var(--cyber-blue); color: var(--deep-dark); box-shadow: 0 0 40px var(--cyber-blue); }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="index.html">AQUA<span class="text-primary">VOLT</span></a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="tech.html">Solutions</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="contact.html">Our Team</a></li>
-                    <li class="nav-item"><a class="btn btn-primary ms-lg-3 px-4 rounded-pill" href="contact.html">Get a Quote</a></li>
-                </ul>
+            <a class="navbar-brand fw-bold" href="#">AQUA<span style="color:var(--cyber-blue)">VOLT</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link px-3" href="index.html">Mainframe</a>
+                <a class="nav-link px-3" href="contact.html">Unit Structure</a>
+                <a class="btn-neon ms-lg-3" href="#contact">Initialize</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-interactive text-center">
-        <div class="container" data-aos="zoom-out" data-aos-duration="1500">
-            <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill">ENERGY REVOLUTION 2026</span>
-            <h1 class="display-2 fw-bold mb-4">Empowering Agriculture <br> with <span class="text-primary">Smart Hydro</span></h1>
-            <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 700px;">AquaVolt delivers interactive, enterprise-grade hydro energy solutions.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow">Explore Solutions</a>
-                <a href="tech.html" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill">The Tech</a>
+    <section class="hero-cyber text-center">
+        <div class="container" data-aos="zoom-in">
+            <h1 class="hero-title mb-4">CYBERNETIC <br> HYDRO POWER</h1>
+            <p class="lead mb-5 opacity-50">Next-Gen energy harvesting for the digital agriculture era.</p>
+            <div class="d-flex justify-content-center gap-4">
+                <button class="btn-neon">DEPLOY SYSTEM</button>
+                <button class="btn btn-outline-light rounded-pill px-5">VIEW SPECS</button>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="services" class="py-5 my-5">
-        <div class="container text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold display-5">Enterprise Solutions</h2>
-            <hr class="mx-auto border-primary border-3 opacity-100" style="width: 60px;">
-        </div>
+    <section class="py-5">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
-                    <div class="service-card">
-                        <h3 class="fw-bold text-dark">Turbine Install</h3>
-                        <p class="text-muted">Full-scale implementation of custom Archimedes screws.</p>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="cyber-card">
+                        <h3 style="color:var(--cyber-blue)">01. KINETIC</h3>
+                        <p class="opacity-50">Maximum torque extraction from low-flow irrigation channels.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <h3 class="fw-bold text-dark">Grid Integration</h3>
-                        <p class="text-muted">Connecting hydro power directly to your farm's electrical grid.</p>
+                    <div class="cyber-card">
+                        <h3 style="color:var(--cyber-blue)">02. SYNAPTIC</h3>
+                        <p class="opacity-50">Real-time AI data analysis for grid stability and output.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
-                    <div class="service-card">
-                        <h3 class="fw-bold text-dark">AI Monitoring</h3>
-                        <p class="text-muted">AI-powered dashboard to track energy production in real-time.</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cyber-card">
+                        <h3 style="color:var(--cyber-blue)">03. ETERNAL</h3>
+                        <p class="opacity-50">Built with aerospace-grade materials for 25+ years of uptime.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="count-up">
-                    <div class="stat-number">25+</div>
-                    <p class="text-muted">Years Lifespan</p>
-                </div>
-                <div class="col-md-4" data-aos="count-up">
-                    <div class="stat-number">100%</div>
-                    <p class="text-muted">Clean Energy</p>
-                </div>
-                <div class="col-md-4" data-aos="count-up">
-                    <div class="stat-number">0</div>
-                    <p class="text-muted">Carbon Emissions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <div class="col-md-4">
-                    <h3 class="fw-bold mb-4">AQUA<span class="text-primary">VOLT</span></h3>
-                    <p class="opacity-50 small">Leading the Middle East's transition to sustainable agricultural energy.</p>
-                </div>
-                <div class="col-md-2 offset-md-2">
-                    <h6 class="fw-bold mb-4 text-white">Company</h6>
-                    <a href="contact.html" class="footer-link">About Us</a>
-                    <a href="tech.html" class="footer-link">Technology</a>
-                </div>
-                <div class="col-md-4">
-                    <h6 class="fw-bold mb-4 text-white">Contact</h6>
-                    <p class="small opacity-50">STEM El Sadat City, Egypt</p>
-                    <p class="small opacity-50">support@aquavolt.com</p>
-                </div>
-            </div>
-            <hr class="opacity-25">
-            <p class="text-center small opacity-50 mb-0">&copy; 2026 AquaVolt. STEM Students Innovation.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // سرعة الأنيميشن (1 ثانية)
-            once: true, // الأنيميشن يشتغل مرة واحدة بس عند التمرير
-            mirror: false
-        });
-    </script>
+    <script> AOS.init(); </script>
 </body>
 </html>
